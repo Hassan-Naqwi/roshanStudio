@@ -1243,36 +1243,32 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const width = window.innerWidth;
-            if (width > 768) {
+            if (window.matchMedia("(min-width: 768px)").matches) {
                 window.addEventListener('scroll', function () {
                     let scroll = window.scrollY;
                     let offset = document.querySelector('#nav').offsetTop;
                     if (scroll > offset) {
                         document.querySelector('#nav').classList.add('sticky');
-                        let elements = document.querySelectorAll('.none');
-                        elements.forEach((e) => {
+                        document.querySelectorAll('.none').forEach((e) => {
                             e.style.display = 'block';
-                        })
-                    }
-                    else {
-                        let elements = document.querySelectorAll('.none');
-                        elements.forEach((e) => {
+                        });
+                    } else {
+                        document.querySelectorAll('.none').forEach((e) => {
                             e.style.display = 'none';
-                        })
+                        });
                         document.querySelector('.nav').classList.remove('sticky');
                     }
-                })
-            }
-            else {
-                $(document).ready(function () {
+                });
+            } else {
+                $(function () {
                     $('.toggle').click(function () {
                         $(this).parent().parent().next().find('ul').slideToggle();
-                    })
-                })
+                    });
+                });
             }
-        })
+        });
     </script>
+
 
 
 
