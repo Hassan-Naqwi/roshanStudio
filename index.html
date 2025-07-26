@@ -1243,7 +1243,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            if (window.matchMedia("(min-width: 768px)").matches) {
+            if (window.matchMedia("(min-width: 767px)").matches) {
                 window.addEventListener('scroll', function () {
                     let scroll = window.scrollY;
                     let offset = document.querySelector('#nav').offsetTop;
@@ -1259,15 +1259,17 @@
                         document.querySelector('.nav').classList.remove('sticky');
                     }
                 });
-            } else {
-                $(function () {
-                    $('.toggle').click(function () {
-                        $(this).parent().parent().next().find('ul').slideToggle();
-                    });
-                });
             }
+            $(function () {
+                $('.toggle').click(function () {
+                    $(this).parent().parent().next().find('ul').slideToggle();
+                });
+            });
+
         });
     </script>
+
+
 
 
 
