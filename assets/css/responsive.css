@@ -90,7 +90,9 @@
         padding: 0px 20px !important;
     }
 
-    header .btn {
+    header .btn,
+    header nav img,
+    header nav .btn2 {
         display: none;
     }
 
