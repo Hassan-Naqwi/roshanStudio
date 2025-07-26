@@ -31,8 +31,8 @@
     background-clip: padding-box;
 }
 
-.toggle {
-    display: none !important;
+label {
+    display: none;
 }
 
 html {

@@ -7,8 +7,8 @@
         flex-wrap: wrap;
     }
 
-    .toggle {
-        display: block !important;
+    label {
+        display: block;
     }
 
     .and {
