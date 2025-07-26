@@ -13,34 +13,35 @@
     <script src="https://kit.fontawesome.com/be7915e09e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        if (window.innerWidth > 768) {
-            window.addEventListener('scroll', function () {
-                let scroll = window.scrollY;
-                let offset = document.querySelector('#nav').offsetTop;
-                if (scroll > offset) {
-                    document.querySelector('#nav').classList.add('sticky');
-                    let elements = document.querySelectorAll('.none');
-                    elements.forEach((e) => {
-                        e.style.display = 'block';
-                    })
-                }
-                else {
-                    let elements = document.querySelectorAll('.none');
-                    elements.forEach((e) => {
-                        e.style.display = 'none';
-                    })
-                    document.querySelector('.nav').classList.remove('sticky');
-                }
-            })
-        }
-        else {
-            $(document).ready(function () {
-                $('.toggle').click(function () {
-                    $(this).parent().parent().next().find('ul').slideToggle();
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth > 768) {
+                window.addEventListener('scroll', function () {
+                    let scroll = window.scrollY;
+                    let offset = document.querySelector('#nav').offsetTop;
+                    if (scroll > offset) {
+                        document.querySelector('#nav').classList.add('sticky');
+                        let elements = document.querySelectorAll('.none');
+                        elements.forEach((e) => {
+                            e.style.display = 'block';
+                        })
+                    }
+                    else {
+                        let elements = document.querySelectorAll('.none');
+                        elements.forEach((e) => {
+                            e.style.display = 'none';
+                        })
+                        document.querySelector('.nav').classList.remove('sticky');
+                    }
                 })
-            })
-        }
-
+            }
+            else {
+                $(document).ready(function () {
+                    $('.toggle').click(function () {
+                        $(this).parent().parent().next().find('ul').slideToggle();
+                    })
+                })
+            }
+        })
     </script>
 
 </head>
