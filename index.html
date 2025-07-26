@@ -1243,7 +1243,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            if (window.innerWidth > 768) {
+            const width = window.innerWidth;
+            if (width > 768) {
                 window.addEventListener('scroll', function () {
                     let scroll = window.scrollY;
                     let offset = document.querySelector('#nav').offsetTop;
@@ -1272,6 +1273,8 @@
             }
         })
     </script>
+
+
 
     <script>
         $(document).ready(function () {

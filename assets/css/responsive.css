@@ -93,9 +93,8 @@
     header .btn,
     header nav img,
     header nav .btn2 {
-        display: none;
+        display: none !important;
     }
-
 
 
     .btn,
