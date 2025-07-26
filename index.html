@@ -7,17 +7,47 @@
     <title>Roshan Studio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <script src="https://kit.fontawesome.com/be7915e09e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.0/css/all.min.css"
         integrity="sha512-eBNnVs5xPOVglLWDGXyZnZZ2K2ixXhR/3aECgCpFnW2dGCd/yiqXZ6fcB3BubeA91kM6NX234b6Wrah8RiYAPA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/be7915e09e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        window.addEventListener('resize', function () {
+            if (window.innerWidth < 768) {
+                document.getElementById('nav').classList.remove('nav');
+                document.querySelector('.toggle').style.display = 'block';
+            }
+            else
+                document.getElementById('nav').classList.add('nav');
+        })
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            let scroll = window.scrollY;
+            let offset = document.querySelector('.nav').offsetTop;
+            if (scroll > offset) {
+                document.querySelector('.nav').classList.add('sticky');
+                let elements = document.querySelectorAll('.none');
+                elements.forEach((e) => {
+                    e.style.display = 'block';
+                })
+            }
+            else {
+                let elements = document.querySelectorAll('.none');
+                elements.forEach((e) => {
+                    e.style.display = 'none';
+                })
+                document.querySelector('.nav').classList.remove('sticky');
+            }
+        })
+    </script>
 </head>
 
 <body>
-
 
     <header>
         <div class="container">
@@ -1241,46 +1271,10 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-
-
-    <script>
-        window.addEventListener('resize', function () {
-            if (window.innerWidth < 768) {
-                document.getElementById('nav').classList.remove('nav');
-                document.querySelector('.toggle').style.display = 'block'
-            }
-            else
-                document.getElementById('nav').classList.add('nav');
-        })
-    </script>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            let scroll = window.scrollY;
-            let offset = document.querySelector('.nav').offsetTop;
-
-            if (scroll > offset) {
-                document.querySelector('.nav').classList.add('sticky');
-                let elements = document.querySelectorAll('.none');
-                elements.forEach((e) => {
-                    e.style.display = 'block';
-                })
-            }
-            else {
-                let elements = document.querySelectorAll('.none');
-                elements.forEach((e) => {
-                    e.style.display = 'none';
-                })
-                document.querySelector('.nav').classList.remove('sticky');
-            }
-        })
-    </script>
     <script>
         $(document).ready(function () {
             $(".accordion").click(function () {
-
                 $(this).parent().find('.panel').slideToggle(600);
                 if ($(this).parent().hasClass('lg'))
                     $(this).parent().removeClass('lg');
@@ -1289,14 +1283,11 @@
             })
         }
         );
-
         $(document).ready(function () {
             $('.toggle').click(function () {
                 $(this).parent().parent().next().find('ul').slideToggle(600);
             })
         })
-
-
     </script>
     <script>
         function openvideo() {
